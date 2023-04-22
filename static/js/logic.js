@@ -6,6 +6,7 @@ d3.json(link).then(function(data){
   createFeatures(data.features);
 });
 
+// Create function for features
 function createFeatures(earthquakeData) {
 
   // Create function to create a popup to describe information of the earthquake
@@ -16,7 +17,7 @@ function createFeatures(earthquakeData) {
   }
 
   // Create function for the circle markers 
-  function createCircleMarker(feature,coordinates){
+  function createCircleMarker(feature, coordinates){
     // Set up markers size, color and opacity
     let options = {
         radius:feature.properties.mag*5,
@@ -76,18 +77,18 @@ function createMap(earthquakes) {
   });
 
   // Set up base layers
-  let baseMaps = {
+  let basemaps = {
     "Street Map": streetstylemap,
     "Gray Map": graymap
   };
 
   // Set up overlay layers
-  let overlayMaps = {
+  let overlaymap = {
     Earthquakes: earthquakes
   };
 
   // Set up my map with the coordinate of the central of the USA and layers of streetmap and earthquakes
-  let myMap = L.map("map", {
+  let mymap = L.map("map", {
     // central of the USA
     center: [
       39.8282, -98.5795
@@ -97,12 +98,12 @@ function createMap(earthquakes) {
   });
 
   // Control layer
-  L.control.layers(baseMaps, overlayMaps, {
+  L.control.layers(basemaps, overlaymap, {
     collapsed: false
-  }).addTo(myMap);
+  }).addTo(mymap);
 
   // Add info to the map
-  legend.addTo(myMap);
+  legend.addTo(mymap);
 }
 
 // Set up legend for the map data.
