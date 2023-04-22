@@ -6,4 +6,5 @@
 ### Include popups that provide additional information about the earthquake when its associated marker is clicked.
 ### Create a legend that will provide context for my map data.
 
-kellyruan42.github.io
+
+https://kellyruan42.github.io/leaflet-challenge/
